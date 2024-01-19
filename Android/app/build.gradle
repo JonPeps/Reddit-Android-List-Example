@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.android'
 }
 
 apply from: '../dependencies.gradle'
@@ -62,6 +63,7 @@ android {
             debuggable false
         }
     }
+    namespace 'com.codepep.yps'
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions.freeCompilerArgs += [
@@ -90,6 +92,7 @@ dependencies {
     implementation "androidx.compose.runtime:runtime-livedata:$versions.composeVersion"
     implementation "androidx.navigation:navigation-compose:$versions.composeNavVersion"
     implementation "androidx.compose.ui:ui-tooling:$versions.composeVersion"
+    implementation 'androidx.core:core-ktx:+'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$versions.composeVersion"
 
     // architecture components
